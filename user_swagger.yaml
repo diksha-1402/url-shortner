@@ -6,7 +6,8 @@ info:
 servers:
   - url: http://localhost:3140/v1/api
     description: Local server for testing
-
+  - url: https://url-shortner-js93.onrender.com/v1/api
+    description: Production Server
 components:
   securitySchemes:
     Bearer:

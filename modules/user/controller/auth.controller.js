@@ -6,6 +6,7 @@ import helper from "../../../utils/helper.js";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 
 const configureGoogleStrategy = async () => {
+  console.log(constants.CONST_CALLBACK_URL)
   passport.use(
     new GoogleStrategy(
       {
