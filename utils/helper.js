@@ -131,10 +131,10 @@ const saveAnalytics = async (alias,req) => {
           : "Desktop",
       });
       await newAnalytics.save();
-      console.log(`[Analytics Saved] Alias: ${alias}`);
       return ;
     } catch (error) {
       console.error(`[Error Saving Analytics]`, error);
+      return;
     }
 
 };

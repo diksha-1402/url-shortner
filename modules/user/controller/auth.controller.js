@@ -6,14 +6,12 @@ import helper from "../../../utils/helper.js";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 
 const configureGoogleStrategy = async () => {
-  console.log(constants.CONST_CALLBACK_URL)
-  let callback=constants.CONST_CALLBACK_URL
-  if(constants.CONST_ENV!="test"){
-    console.log("Test Google Strategy")
+  let callback = constants.CONST_CALLBACK_URL;
+  if (constants.CONST_ENV != "test") {
     // Test Strategy
-     callback=constants.CONST_CALLBACK_PROD_URL
+    callback = constants.CONST_CALLBACK_PROD_URL;
   }
-  console.log(callback,"-----------------callback")
+
   passport.use(
     new GoogleStrategy(
       {
@@ -23,19 +21,11 @@ const configureGoogleStrategy = async () => {
       },
       async (accessToken, refreshToken, profile, done) => {
         try {
-          console.log(profile,accessToken,refreshToken,done)
           const { id, emails, displayName, photos } = profile;
           const email = emails[0].value;
           // Find or create the user in MongoDB
           let user = await userModel.findOne({ googleId: id });
           if (!user) {
-            console.log(
-              "user",
-              user,
-              profile.given_name,
-              profile.family_name,
-              profile.picture
-            );
             user = new userModel({
               googleId: id,
               email,

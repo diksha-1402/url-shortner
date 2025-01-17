@@ -7,11 +7,11 @@ import analyticsModel from "../../../models/analytics.model.js";
 import redis from "redis";
 import redisConnect from "../../../utils/redisConnect.js";
 // Redis client setup
-console.log(constants.CONST_REDIS_HOST,constants.CONST_REDIS_PORT)
+
 const redisClient = redis.createClient({
   // host: constants.CONST_REDIS_HOST,
   // port: constants.CONST_REDIS_PORT,
- url: constants.CONST_REDIS_URL,
+  url: constants.CONST_REDIS_URL,
 });
 redisClient.on("error", (err) => console.error("Redis Client Error:", err));
 (async () => {
@@ -75,7 +75,6 @@ const shortUrl = async (req, res) => {
 const getUrl = async (req, res) => {
   try {
     let alias = req.params.alias;
-    console.log(alias);
     const keysToDelete = await redisClient.keys("*"); // Fetch all keys
     if (keysToDelete.length > 0) {
       await redisClient.del(keysToDelete); // Delete all keys
