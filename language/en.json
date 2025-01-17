@@ -1,0 +1,20 @@
+{
+	"lang_app_title": "url-shorter",
+	"lang_endpoint_not_found_message": "Endpoint not found message",
+	"lang_forbidden": "Forbidden",
+	"lang_registration_email": "Registration email",
+	"lang_you_are_not_verified_please_verify": "You are not verified.  Please verify",
+	"lang_signup_success": "Sighup success",
+	"lang_login_success": "Login success",
+	"lang_validate_error_email_unique": "Already Exist",
+	"lang_incorrect_password": "Incorrect password",
+	"lang_user_not_found": "User not found",
+	"lang_success": "Success",
+	"lang_alias_exists": "Alias exists",
+	"lang_validate_user_authorized_token": "Validate user authorized token",
+	"lang_url_not_found": "Url not found",
+	"lang_invalid_token": "Invalid token",
+	"lang_token_expired": "Token expired",
+	"lang_Url": "Url",
+	"lang_no_record_found": "lang_no_record_found"
+}
