@@ -13,15 +13,17 @@ const configureGoogleStrategy = async () => {
     // Test Strategy
      callback=constants.CONST_CALLBACK_PROD_URL
   }
+  console.log(callback,"-----------------callback")
   passport.use(
     new GoogleStrategy(
       {
         clientID: constants.CONST_GOOGLE_CLIENT_ID,
         clientSecret: constants.CONST_GOOGLE_CLIENT_SECRET,
-        callbackURL: constants.CONST_CALLBACK_URL,
+        callbackURL: callback,
       },
       async (accessToken, refreshToken, profile, done) => {
         try {
+          console.log(profile,accessToken,refreshToken,done)
           const { id, emails, displayName, photos } = profile;
           const email = emails[0].value;
           // Find or create the user in MongoDB
