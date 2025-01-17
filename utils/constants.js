@@ -26,6 +26,7 @@ const constants = Object.freeze({
 
   CONST_REDIS_HOST: process.env.REDIS_HOST,
   CONST_REDIS_PORT: process.env.REDIS_PORT,
+  CONST_REDIS_URL: process.env.REDIS_URL,
 
   CONST_USER_VERIFIED_TRUE: true,
   CONST_USER_VERIFIED_FALSE: false,

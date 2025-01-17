@@ -7,9 +7,11 @@ import analyticsModel from "../../../models/analytics.model.js";
 import redis from "redis";
 import redisConnect from "../../../utils/redisConnect.js";
 // Redis client setup
+console.log(constants.CONST_REDIS_HOST,constants.CONST_REDIS_PORT)
 const redisClient = redis.createClient({
-  host: constants.CONST_REDIS_HOST,
-  port: constants.CONST_REDIS_PORT,
+  // host: constants.CONST_REDIS_HOST,
+  // port: constants.CONST_REDIS_PORT,
+ url: constants.CONST_REDIS_URL,
 });
 redisClient.on("error", (err) => console.error("Redis Client Error:", err));
 (async () => {
