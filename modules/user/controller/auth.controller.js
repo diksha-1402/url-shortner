@@ -7,6 +7,12 @@ import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 
 const configureGoogleStrategy = async () => {
   console.log(constants.CONST_CALLBACK_URL)
+  let callback=constants.CONST_CALLBACK_URL
+  if(constants.CONST_ENV!="test"){
+    console.log("Test Google Strategy")
+    // Test Strategy
+     callback=constants.CONST_CALLBACK_PROD_URL
+  }
   passport.use(
     new GoogleStrategy(
       {
